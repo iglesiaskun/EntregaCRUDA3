@@ -4,14 +4,8 @@ public class Empresa implements Gerenciamento {
    private ArrayList<Pessoa> pessoas = new ArrayList<>();
 
    @Override
-   public String addPessoa(Pessoa pessoa) {
-       try{
-           pessoas.add(pessoa);
-
-           return "Sucesso";
-       } catch (Exception ex){
-           return "Erro:" + ex.getMessage();
-       }
+   public void addPessoa(Pessoa pessoa) {
+       pessoas.add(pessoa);
    }
 
    @Override
@@ -24,25 +18,13 @@ public class Empresa implements Gerenciamento {
        return null;
    }
    @Override
-   public String updatePessoa(String nome, Pessoa pessoa) {
-       try{
-           var index = pessoas.indexOf(pessoa);
-           pessoas.set(index, pessoa);
-
-           return "Sucesso";
-       } catch (Exception ex){
-           return "Erro:" + ex.getMessage();
-       }
+   public void updatePessoa(String nome, Pessoa pessoa) {
+       var index = pessoas.indexOf(pessoa);
+       pessoas.set(index, pessoa);
    }
 
     @Override
-    public String deletePessoa(String nome) {
-       try{
-           pessoas.removeIf(pessoa -> pessoa.getNome().equals(nome));
-
-           return "Sucesso";
-       } catch (Exception ex){
-           return "Erro:" + ex.getMessage();
-       }
+    public void deletePessoa(String nome) {
+        pessoas.removeIf(pessoa -> pessoa.getNome().equals(nome));
     }
 }

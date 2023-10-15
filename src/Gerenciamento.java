@@ -1,6 +1,6 @@
 public interface Gerenciamento {
-    String addPessoa(Pessoa pessoa);
+    void addPessoa(Pessoa pessoa);
     Pessoa getPessoa(String nome);
-    String updatePessoa(String nome, Pessoa pessoa);
-    String deletePessoa(String nome);
+    void updatePessoa(String nome, Pessoa pessoa);
+    void deletePessoa(String nome);
 }
